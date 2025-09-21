@@ -1,0 +1,21 @@
+{
+  "serviceName": "echo-service",
+  "taskDefinition": "echo-task",
+  "desiredCount": 1,
+  "launchType": "FARGATE",
+  "networkConfiguration": {
+    "awsvpcConfiguration": {
+      "subnets": [
+        "subnet-6e8a7426"
+      ],
+      "securityGroups": [
+        "sg-0c1eb3866fe4eb82f"
+      ],
+      "assignPublicIp": "ENABLED"
+    }
+  },
+  "deploymentConfiguration": {
+    "maximumPercent": 200,
+    "minimumHealthyPercent": 50
+  }
+}
