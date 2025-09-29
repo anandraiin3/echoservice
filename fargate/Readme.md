@@ -82,6 +82,22 @@ Send a test request to the public IP:
 ```bash
 curl http://3.107.163.50/test -X POST -d 'hello world'
 ```
+---
 
-You should receive a JSON response reflecting your request details (method, path, headers, body).
+## 6. If you have deployed as service hen following is a shortcut to get the IP
 
+```bash
+aws ec2 describe-network-interfaces \
+  --network-interface-ids $(aws ecs describe-tasks \
+    --cluster anand-ecsfargate-cluster \
+    --tasks $(aws ecs list-tasks \
+      --cluster anand-ecsfargate-cluster \
+      --service-name echo-service \
+      --query "taskArns[0]" \
+      --output text) \
+    --query "tasks[0].attachments[0].details[?name=='networkInterfaceId'].value" \
+    --output text) \
+  --query "NetworkInterfaces[0].Association.PublicIp" \
+  --output text
+```
+---

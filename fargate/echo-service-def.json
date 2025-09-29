@@ -14,6 +14,13 @@
       "assignPublicIp": "ENABLED"
     }
   },
+  "loadBalancers": [
+    {
+      "targetGroupArn": "arn:aws:elasticloadbalancing:ap-southeast-2:282764120287:targetgroup/echo-tg/1234567890abcdef",
+      "containerName": "echo",
+      "containerPort": 80
+    }
+  ],
   "deploymentConfiguration": {
     "maximumPercent": 200,
     "minimumHealthyPercent": 50
