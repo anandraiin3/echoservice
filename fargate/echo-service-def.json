@@ -16,7 +16,7 @@
   },
   "loadBalancers": [
     {
-      "targetGroupArn": "arn:aws:elasticloadbalancing:ap-southeast-2:282764120287:targetgroup/echo-tg/1234567890abcdef",
+      "targetGroupArn": "arn:aws:elasticloadbalancing:ap-southeast-2:282764120287:targetgroup/TG1/2cc000599cae09a4",
       "containerName": "echo",
       "containerPort": 80
     }
